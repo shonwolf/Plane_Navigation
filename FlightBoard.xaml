@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="FlightSimulator.Views.FlightBoard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:d3="http://research.microsoft.com/DynamicDataDisplay/1.0"
+             xmlns:local="clr-namespace:FlightSimulator.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="450" Background="White">
+    <Grid RenderTransformOrigin="0.447,0.408">
+        <d3:ChartPlotter Grid.Row="0" LegendVisible="False" x:Name="plotter" Margin="53,65,30.333,49.667" Content="Button"/>
+        <Button x:Name="ConnectButton" Content="Connect" HorizontalAlignment="Left" Margin="78,31,0,0" VerticalAlignment="Top" Width="75" Command="{Binding ConnectCommand}"  />
+        <Button x:Name="SettingsButton" Content="Settings" HorizontalAlignment="Left" Margin="345,31,0,0" VerticalAlignment="Top" Width="75" Command="{Binding SettingsCommand}"/>
+        <Label Content="Lat" HorizontalAlignment="Left" Margin="215,405,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
+        <Label Content="Lon" HorizontalAlignment="Left" Margin="10,195,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.351,1.558" FontSize="14" FontWeight="Bold">
+            <Label.LayoutTransform>
+                <TransformGroup>
+                    <RotateTransform Angle="-90" />
+                    <ScaleTransform ScaleX="-1" ScaleY="-1"/>
+                </TransformGroup>
+            </Label.LayoutTransform>
+        </Label>
+        <Button x:Name="ConnectButton_Copy" Content="Disconnect" HorizontalAlignment="Left" Margin="215,31,0,0" VerticalAlignment="Top" Width="75" Command="{Binding DisconnectCommand}"  />
+    </Grid>
+</UserControl>
